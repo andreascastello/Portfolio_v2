@@ -5,10 +5,10 @@ import { cn } from "@/lib/utils"
 
 interface MobileMenuProps {
     isOpen: boolean
-    onClose: () => void
+    onCloseAction: () => void
 }
 
-export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+export function MobileMenu({ isOpen, onCloseAction }: MobileMenuProps) {
     return (
         <div
             className={cn(
@@ -19,7 +19,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <div className="h-full flex flex-col p-6">
                 <div className="flex justify-between items-center mb-12">
                     <span className="font-main text-xl">Andreas Castello</span>
-                    <button onClick={onClose} className="p-2">
+                    <button onClick={onCloseAction} className="p-2">
                         <X className="h-6 w-6" />
                     </button>
                 </div>
@@ -27,16 +27,16 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 <nav className="flex-1">
                     <ul className="space-y-6 text-2xl font-main">
                         <li>
-                            <a href="#works" onClick={onClose}>Works</a>
+                            <a href="#works" onClick={onCloseAction}>Works</a>
                         </li>
                         <li>
-                            <a href="#about" onClick={onClose}>About</a>
+                            <a href="#about" onClick={onCloseAction}>About</a>
                         </li>
                         <li>
-                            <a href="#services" onClick={onClose}>Services</a>
+                            <a href="#services" onClick={onCloseAction}>Services</a>
                         </li>
                         <li>
-                            <a href="#contact" onClick={onClose}>Contact</a>
+                            <a href="#contact" onClick={onCloseAction}>Contact</a>
                         </li>
                     </ul>
                 </nav>

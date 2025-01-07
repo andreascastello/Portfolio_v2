@@ -2,11 +2,7 @@
 import { Nav } from "@/components/nav"
 import { About } from "@/components/about"
 import { Work } from "@/components/work"
-import Image from "next/image";
 import React from "react";
-import {AuroraBackground} from "@/components/aurora-background";
-import {TypewriterEffect} from "@/components/typewriter-effect";
-import {WobbleCard} from "@/components/wobble-card";
 import Contact from "@/components/contact"
 import ServicesGrid from "@/components/services-grid"
 import { useEffect, useState } from "react";

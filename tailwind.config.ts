@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         alex: ["Alex Brush", "sans-serif"],
         main: ["Cormorant Garamond", "sans-serif"],
+        secondary: ["Cormorant Infant", "sans-serif"],
       },
       colors: {
         background: "var(--background)",

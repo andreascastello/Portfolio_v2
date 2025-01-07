@@ -1,7 +1,6 @@
 "use client"
 
 import {motion, AnimatePresence} from 'framer-motion'
-import {ArrowLeft} from 'lucide-react'
 import Image from 'next/image'
 import {AuroraBackground} from '@/components/aurora-background'
 import {useState, useEffect} from 'react'
@@ -16,10 +15,10 @@ interface Project {
 interface ProjectOverlayProps {
     project: Project | null
     rect: DOMRect | null
-    onClose: () => void
+    onCloseAction: () => void
 }
 
-export function ProjectOverlay({project, rect, onClose}: ProjectOverlayProps) {
+export function ProjectOverlay({project, rect, onCloseAction}: ProjectOverlayProps) {
     const [isExiting, setIsExiting] = useState(false)
     const [isMobile, setIsMobile] = useState(false)
 
@@ -40,7 +39,7 @@ export function ProjectOverlay({project, rect, onClose}: ProjectOverlayProps) {
     }
 
     return (
-        <AnimatePresence mode="wait" onExitComplete={onClose}>
+        <AnimatePresence mode="wait" onExitComplete={onCloseAction}>
             {!isExiting && (
                 <motion.div
                     initial={{opacity: 0}}

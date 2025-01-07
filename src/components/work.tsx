@@ -1,9 +1,9 @@
 "use client"
 
-import {useState, useRef} from "react"
+import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
-import {motion, AnimatePresence} from "framer-motion"
-import {ProjectOverlay} from "./project-overlay"
+import { motion, AnimatePresence } from "framer-motion"
+import { ProjectOverlay } from "./project-overlay"
 
 const projects = [
     {
@@ -49,9 +49,16 @@ export function Work() {
         rect: DOMRect
     } | null>(null)
 
-    const handleClick = (project: typeof projects[0], ref: React.RefObject<HTMLDivElement>) => {
-        if (ref.current) {
-            const rect = ref.current.getBoundingClientRect()
+    const imageRefs = useRef<(HTMLDivElement | null)[]>([])
+
+    useEffect(() => {
+        imageRefs.current = imageRefs.current.slice(0, projects.length)
+    }, [])
+
+    const handleClick = (project: typeof projects[0], index: number) => {
+        const ref = imageRefs.current[index]
+        if (ref) {
+            const rect = ref.getBoundingClientRect()
             setSelectedProject({ project, rect })
             document.body.classList.add('overflow-hidden') // Désactiver le scroll
         }
@@ -71,107 +78,103 @@ export function Work() {
                         <h2 className="text-base font-main">Selected works</h2>
                     </div>
                     <div className="space-y-32 md:space-y-32">
-                        {projects.map((project, index) => {
-                            const imageRef = useRef<HTMLDivElement>(null)
-
-                            return (
-                                <div key={project.title} className="block group">
-                                    <div className="grid grid-cols-12 gap-8 items-start">
-                                        {index === 0 ? (
-                                            <>
-                                                <div className="col-span-12 lg:col-span-2 lg:col-start-3">
-                                                    <h3 className="text-3xl md:text-4xl font-main mb-4">{project.title}</h3>
-                                                    <p className="text-gray-300 font-main">{project.type}</p>
-                                                </div>
-                                                <div
-                                                    className="col-span-12 lg:col-span-4 lg:col-start-5 cursor-pointer"
-                                                    ref={imageRef}
-                                                    onClick={() => handleClick(project, imageRef)}
+                        {projects.map((project, index) => (
+                            <div key={project.title} className="block group">
+                                <div className="grid grid-cols-12 gap-8 items-start">
+                                    {index === 0 ? (
+                                        <>
+                                            <div className="col-span-12 lg:col-span-2 lg:col-start-3">
+                                                <h3 className="text-3xl md:text-4xl font-main mb-4">{project.title}</h3>
+                                                <p className="text-gray-300 font-main">{project.type}</p>
+                                            </div>
+                                            <div
+                                                className="col-span-12 lg:col-span-4 lg:col-start-5 cursor-pointer"
+                                                ref={(el: HTMLDivElement | null) => { imageRefs.current[index] = el }}
+                                                onClick={() => handleClick(project, index)}
+                                            >
+                                                <motion.div
+                                                    layoutId={`project-${project.title}`}
+                                                    className="relative h-[200px] w-full overflow-hidden rounded-lg"
+                                                    transition={{
+                                                        type: "spring",
+                                                        damping: 30,
+                                                        stiffness: 120,
+                                                        duration: 1 // Durée totale fixée à 1 seconde
+                                                    }}
                                                 >
-                                                    <motion.div
-                                                        layoutId={`project-${project.title}`}
-                                                        className="relative h-[200px] w-full overflow-hidden rounded-lg"
-                                                        transition={{
-                                                            type: "spring",
-                                                            damping: 30,
-                                                            stiffness: 120,
-                                                            duration: 1 // Durée totale fixée à 1 seconde
-                                                        }}
-                                                    >
-                                                        <Image
-                                                            src={project.image}
-                                                            alt={project.title}
-                                                            fill
-                                                            className="object-cover transition-transform duration-500 group-hover:scale-105 grayscale hover:grayscale-0"
-                                                        />
-                                                    </motion.div>
-                                                </div>
-                                            </>
-                                        ) : index % 2 === 1 ? (
-                                            <>
-                                                <div
-                                                    className="col-span-12 lg:col-span-4 lg:col-start-2 cursor-pointer"
-                                                    ref={imageRef}
-                                                    onClick={() => handleClick(project, imageRef)}
+                                                    <Image
+                                                        src={project.image}
+                                                        alt={project.title}
+                                                        fill
+                                                        className="object-cover transition-transform duration-500 group-hover:scale-105 grayscale hover:grayscale-0"
+                                                    />
+                                                </motion.div>
+                                            </div>
+                                        </>
+                                    ) : index % 2 === 1 ? (
+                                        <>
+                                            <div
+                                                className="col-span-12 lg:col-span-4 lg:col-start-2 cursor-pointer"
+                                                ref={(el: HTMLDivElement | null) => { imageRefs.current[index] = el }}
+                                                onClick={() => handleClick(project, index)}
+                                            >
+                                                <motion.div
+                                                    layoutId={`project-${project.title}`}
+                                                    className="relative h-[200px] w-full overflow-hidden rounded-lg"
+                                                    transition={{
+                                                        type: "spring",
+                                                        damping: 30,
+                                                        stiffness: 120,
+                                                        duration: 1 // Durée totale fixée à 1 seconde
+                                                    }}
                                                 >
-                                                    <motion.div
-                                                        layoutId={`project-${project.title}`}
-                                                        className="relative h-[200px] w-full overflow-hidden rounded-lg"
-                                                        transition={{
-                                                            type: "spring",
-                                                            damping: 30,
-                                                            stiffness: 120,
-                                                            duration: 1 // Durée totale fixée à 1 seconde
-                                                        }}
-                                                    >
-                                                        <Image
-                                                            src={project.image}
-                                                            alt={project.title}
-                                                            fill
-                                                            className="object-cover transition-transform duration-500 group-hover:scale-105 grayscale hover:grayscale-0"
-                                                        />
-                                                    </motion.div>
-                                                </div>
-                                                <div className="col-span-12 lg:col-span-2 lg:col-start-6">
-                                                    <h3 className="text-3xl md:text-4xl font-main mb-4">{project.title}</h3>
-                                                    <p className="text-gray-300 font-main">{project.type}</p>
-                                                </div>
-                                            </>
-                                        ) : (
-                                            <>
-                                                <div
-                                                    className="col-span-12 lg:col-span-4 lg:col-start-6 cursor-pointer"
-                                                    ref={imageRef}
-                                                    onClick={() => handleClick(project, imageRef)}
+                                                    <Image
+                                                        src={project.image}
+                                                        alt={project.title}
+                                                        fill
+                                                        className="object-cover transition-transform duration-500 group-hover:scale-105 grayscale hover:grayscale-0"
+                                                    />
+                                                </motion.div>
+                                            </div>
+                                            <div className="col-span-12 lg:col-span-2 lg:col-start-6">
+                                                <h3 className="text-3xl md:text-4xl font-main mb-4">{project.title}</h3>
+                                                <p className="text-gray-300 font-main">{project.type}</p>
+                                            </div>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <div
+                                                className="col-span-12 lg:col-span-4 lg:col-start-6 cursor-pointer"
+                                                ref={(el: HTMLDivElement | null) => { imageRefs.current[index] = el }}
+                                                onClick={() => handleClick(project, index)}
+                                            >
+                                                <motion.div
+                                                    layoutId={`project-${project.title}`}
+                                                    className="relative h-[200px] w-full overflow-hidden rounded-lg"
+                                                    transition={{
+                                                        type: "spring",
+                                                        damping: 30,
+                                                        stiffness: 120,
+                                                        duration: 1 // Durée totale fixée à 1 seconde
+                                                    }}
                                                 >
-                                                    <motion.div
-                                                        layoutId={`project-${project.title}`}
-                                                        className="relative h-[200px] w-full overflow-hidden rounded-lg"
-                                                        transition={{
-                                                            type: "spring",
-                                                            damping: 30,
-                                                            stiffness: 120,
-                                                            duration: 1 // Durée totale fixée à 1 seconde
-                                                        }}
-                                                    >
-                                                        <Image
-                                                            src={project.image}
-                                                            alt={project.title}
-                                                            fill
-                                                            className="object-cover transition-transform duration-500 group-hover:scale-105 grayscale hover:grayscale-0"
-                                                        />
-                                                    </motion.div>
-                                                </div>
-                                                <div className="col-span-12 lg:col-span-2 lg:col-start-10">
-                                                    <h3 className="text-3xl md:text-4xl font-main mb-4">{project.title}</h3>
-                                                    <p className="text-gray-300 font-main">{project.type}</p>
-                                                </div>
-                                            </>
-                                        )}
-                                    </div>
+                                                    <Image
+                                                        src={project.image}
+                                                        alt={project.title}
+                                                        fill
+                                                        className="object-cover transition-transform duration-500 group-hover:scale-105 grayscale hover:grayscale-0"
+                                                    />
+                                                </motion.div>
+                                            </div>
+                                            <div className="col-span-12 lg:col-span-2 lg:col-start-10">
+                                                <h3 className="text-3xl md:text-4xl font-main mb-4">{project.title}</h3>
+                                                <p className="text-gray-300 font-main">{project.type}</p>
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
-                            )
-                        })}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -181,10 +184,11 @@ export function Work() {
                     <ProjectOverlay
                         project={selectedProject.project}
                         rect={selectedProject.rect}
-                        onClose={handleClose}
+                        onCloseAction={handleClose}
                     />
                 )}
             </AnimatePresence>
         </>
     )
 }
+

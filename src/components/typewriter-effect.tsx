@@ -1,7 +1,8 @@
 "use client";
+import Image from "next/image";
+import {cn} from "@/lib/utils";
+import {motion} from "framer-motion";
 
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 export const TypewriterEffect = ({
                                      words,
                                      className,
@@ -34,11 +35,15 @@ export const TypewriterEffect = ({
                                     className={cn(`dark:text-white text-black`, word.className)}
                                 >
                   {char === "O" || char === "o" ? (
-                      <img
+                      <Image
                           src="/logo.png"
                           alt="poulpe"
-                          className="inline-block" /* Taille ajustable */
+                          className="inline-block w-20 h-auto sm:w-24 md:w-32 lg:w-40 xl:w-[162px]"
+                          width={162}
+                          height={191}
+                          sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, (max-width: 1024px) 128px, (max-width: 1280px) 160px, 162px"
                       />
+
                   ) : (
                       char
                   )}
@@ -75,7 +80,8 @@ export const TypewriterEffect = ({
                     }}
                 >
                     {renderWords()}{" "}
-                </div>{" "}
+                </div>
+                {" "}
             </motion.div>
             <motion.span
                 initial={{

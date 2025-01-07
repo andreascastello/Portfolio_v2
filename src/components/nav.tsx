@@ -55,16 +55,13 @@ export function Nav() {
                             <Menu className="h-6 w-6" />
                         </button>
                     </nav>
-
-                    {/* Decorative Line */}
-                    {/*<div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[92%] h-px bg-white" />*/}
                 </div>
             </header>
 
             {/* Mobile Menu */}
             <MobileMenu
                 isOpen={isMenuOpen}
-                onClose={() => setIsMenuOpen(false)}
+                onCloseAction={() => setIsMenuOpen(false)}
             />
         </>
     )
