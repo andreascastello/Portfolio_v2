@@ -1,12 +1,13 @@
 "use client";
-import { Nav } from "@/components/nav"
-import { About } from "@/components/about"
-import { Work } from "@/components/work"
+import {Nav} from "@/components/nav"
+import {About} from "@/components/about"
+import {Work} from "@/components/work"
 import React from "react";
 import Contact from "@/components/contact"
 import ServicesGrid from "@/components/services-grid"
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 import {Hero} from "@/components/heros";
+
 const words = [
     {
         text: "Andréas",
@@ -42,14 +43,14 @@ export default function Home() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-  return (
-      <>
-          <Nav/>
-          <Hero words={words} scrollOpacity={scrollOpacity} />
-          <About/>
-          <Work/>
-          <ServicesGrid />
-          <Contact />
-      </>
-  );
+    return (
+        <>
+            <Nav/>
+            <Hero words={words} scrollOpacity={scrollOpacity}/>
+            <About/>
+            <Work/>
+            <ServicesGrid/>
+            <Contact/>
+        </>
+    );
 }

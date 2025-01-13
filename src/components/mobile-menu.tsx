@@ -27,10 +27,10 @@ export function MobileMenu({ isOpen, onCloseAction }: MobileMenuProps) {
                 <nav className="flex-1">
                     <ul className="space-y-6 text-2xl font-main">
                         <li>
-                            <a href="#works" onClick={onCloseAction}>Works</a>
+                            <a href="#about" onClick={onCloseAction}>À propos</a>
                         </li>
                         <li>
-                            <a href="#about" onClick={onCloseAction}>About</a>
+                            <a href="#works" onClick={onCloseAction}>Projets</a>
                         </li>
                         <li>
                             <a href="#services" onClick={onCloseAction}>Services</a>
@@ -43,11 +43,11 @@ export function MobileMenu({ isOpen, onCloseAction }: MobileMenuProps) {
 
                 <div className="border-t border-white/70 pt-6">
                     <ul className="font-main flex flex-wrap gap-x-4 gap-y-2 text-sm text-neutral-200">
-                        <li><a href="#">INSTAGRAM</a></li>
-                        <li><a href="#">BEHANCE</a></li>
-                        <li><a href="#">LINKEDIN</a></li>
-                        <li><a href="#">GITHUB</a></li>
-                        <li><a href="#">CREDITS</a></li>
+                        <li><a href="https://www.instagram.com/andreascastello/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a></li>
+                        <li><a href="https://www.behance.net/andrascastello" target="_blank" rel="noopener noreferrer">BEHANCE</a></li>
+                        <li><a href="https://www.linkedin.com/in/andr%C3%A9as-castello-3b8068186/" target="_blank" rel="noopener noreferrer">LINKEDIN</a></li>
+                        <li><a href="https://github.com/andreascastello" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">CREDITS</a></li>
                     </ul>
                 </div>
             </div>

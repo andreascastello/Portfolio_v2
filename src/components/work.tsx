@@ -7,39 +7,39 @@ import { ProjectOverlay } from "./project-overlay"
 
 const projects = [
     {
-        title: "LES FILLES DU SUD",
+        title: "BEAUTY INSTITUTE",
         type: "UX/UI Design",
-        image: "/filles-du-sud.png",
+        image: "/Beauty_Institute.webp",
         txt: "Une maquette  sur mesure pour un institut de beauté",
-        href: "#"
+        href: "https://www.behance.net/gallery/216276401/Beauty-Institute"
     },
     {
         title: "SARAH GRINDLER",
-        type: "Design & Website Development",
+        type: "UX/UI Design, Development",
         image: "/sarah-grindler.png",
         txt : "Un site vitrine pour une artiste",
         href: "#"
     },
     {
-        title: "KYUMI AGENCY",
-        type: "UX/UI Design & Website Development",
-        image: "/kyumi.png",
-        txt: "Un site vitrine pour une agence d'aide au animaux",
-        href: "#"
-    },
-    {
-        title: "ANDREAS CASTELLO",
-        type: "UX/UI Design",
-        image: "/andreas.jpeg",
-        txt: "Un site vitrine pour moi",
-        href: "#"
+        title: "YVENT",
+        type: "UX/UI Design, Development",
+        image: "/yvent.png",
+        txt: "Une application calendrier pour les événements du campus Ynov",
+        href: "https://www.behance.net/gallery/216276681/Yvent"
     },
     {
         title: "PAUSE COOK",
-        type: "UX/UI Design & Development",
+        type: "UX/UI Design, Development",
         image: "/pausecook.png",
         txt: "Un site de recettes de cuisine",
-        href: "#"
+        href: "https://www.behance.net/gallery/216275981/Pause-Cook"
+    },
+    {
+        title: "KYUMI AGENCY",
+        type: "UX/UI Design, Development",
+        image: "/kyumi.png",
+        txt: "Une application mobile d'aide au animaux",
+        href: "https://www.behance.net/gallery/216278411/Kyumi-Agency"
     }
 ]
 
@@ -71,11 +71,11 @@ export function Work() {
 
     return (
         <>
-            <section id="work" className={`py-20 ${selectedProject ? 'pointer-events-none' : ''}`}>
+            <section id="works" className={`py-16 md:py-20 ${selectedProject ? 'pointer-events-none' : ''}`}>
                 <div className="max-w-8xl mx-auto px-6 md:px-8">
                     <div className="mb-8 md:mb-16">
                         <div className="w-full h-px bg-white/70 mb-2"/>
-                        <h2 className="text-base font-main">Selected works</h2>
+                        <h2 className="text-base font-main">Projets</h2>
                     </div>
                     <div className="space-y-32 md:space-y-32">
                         {projects.map((project, index) => (
@@ -96,9 +96,7 @@ export function Work() {
                                                     layoutId={`project-${project.title}`}
                                                     className="relative h-[200px] w-full overflow-hidden rounded-lg"
                                                     transition={{
-                                                        type: "spring",
-                                                        damping: 30,
-                                                        stiffness: 120,
+                                                        type: "easeInOut",
                                                         duration: 1 // Durée totale fixée à 1 seconde
                                                     }}
                                                 >
@@ -122,9 +120,7 @@ export function Work() {
                                                     layoutId={`project-${project.title}`}
                                                     className="relative h-[200px] w-full overflow-hidden rounded-lg"
                                                     transition={{
-                                                        type: "spring",
-                                                        damping: 30,
-                                                        stiffness: 120,
+                                                        type: "easeInOut",
                                                         duration: 1 // Durée totale fixée à 1 seconde
                                                     }}
                                                 >

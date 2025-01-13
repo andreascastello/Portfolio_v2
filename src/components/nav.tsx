@@ -26,18 +26,18 @@ export function Nav() {
                         {/* Desktop Navigation */}
                         <ul className="font-main hidden md:flex items-center space-x-5">
                             <li>
-                                <a href="#services" className="hover:text-neutral-400 transition-colors">
-                                Services
+                                <a href="#about" className="hover:text-neutral-400 transition-colors">
+                                    À propos
                                 </a>
                             </li>
                             <li>
                                 <a href="#works" className="hover:text-neutral-400 transition-colors">
-                                    Works
+                                    Projets
                                 </a>
                             </li>
                             <li>
-                                <a href="#about" className="hover:text-neutral-400 transition-colors">
-                                    About
+                                <a href="#services" className="hover:text-neutral-400 transition-colors">
+                                    Services
                                 </a>
                             </li>
                             <li>

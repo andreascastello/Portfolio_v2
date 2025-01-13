@@ -8,7 +8,7 @@ export default function Contact() {
     const [isExpanded, setIsExpanded] = useState(false)
 
     return (
-        <section className="min-h-screen w-full flex flex-col justify-end pb-8">
+        <section id="contact" className="min-h-screen w-full flex flex-col justify-end pb-8">
             {/* Footer */}
             <div className="max-w-8xl px-4 md:px-8 w-full flex flex-col items-end space-y-8 z-20">
                 {/* Titre */}
@@ -105,19 +105,19 @@ export default function Contact() {
                         </div>
                         {/* Liens */}
                         <div className="font-main flex flex-wrap items-center justify-between md:justify-end gap-4 md:gap-8 text-white/70 mt-4">
-                            <Link href="#" className="hover:text-white transition-colors">
+                            <Link href="https://www.instagram.com/andreascastello/" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                                 INSTAGRAM
                             </Link>
-                            <Link href="#" className="hover:text-white transition-colors">
+                            <Link href="https://www.behance.net/andrascastello" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                                 BEHANCE
                             </Link>
-                            <Link href="#" className="hover:text-white transition-colors">
+                            <Link href="https://www.linkedin.com/in/andr%C3%A9as-castello-3b8068186/" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                                 LINKEDIN
                             </Link>
-                            <Link href="#" className="hover:text-white transition-colors">
+                            <Link href="https://github.com/andreascastello" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                                 GITHUB
                             </Link>
-                            <Link href="#" className="hover:text-white transition-colors">
+                            <Link href="#" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                                 CREDITS
                             </Link>
                         </div>

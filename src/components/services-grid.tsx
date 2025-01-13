@@ -1,16 +1,17 @@
 "use client";
 
-import { WobbleCard } from "./wobble-card";
+import {WobbleCard} from "./wobble-card";
 
 export default function ServicesGrid() {
     return (
-        <section id="services" className="py-20">
+        <section id="services" className="py-16 md:py-20">
             <div className="max-w-8xl mx-auto px-6 md:px-8">
                 <div className="mb-8 md:mb-16">
-                    <div className="w-full h-px bg-white/70 mb-2" />
+                    <div className="w-full h-px bg-white/70 mb-2"/>
                     <h2 className="text-base font-main">Services</h2>
                 </div>
-                <div className="font-main grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-6 items-start md:px-24">
+                <div
+                    className="font-main grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-6 items-start md:px-24">
                     {/* Carte 1 */}
                     <WobbleCard
                         containerClassName="col-span-1 md:col-span-2 lg:col-span-8 bg-card h-full max-h-[293px]"
@@ -20,7 +21,7 @@ export default function ServicesGrid() {
                                 Création de sites vitrines
                             </h2>
                             <p className="mt-4 text-justify text-neutral-200">
-                                Donnez vie à votre présence en ligne avec un site moderne, élégant et entièrement optimisé pour vos besoins. Idéal pour présenter vos services, votre marque ou vos projets de manière professionnelle.
+                                Donnez vie à <strong>votre présence en ligne</strong> avec un <strong>site moderne, élégant et entièrement optimisé</strong> pour vos besoins. Idéal pour présenter <strong>vos services, votre marque ou vos projets</strong> de manière professionnelle.
                             </p>
                         </div>
                     </WobbleCard>
@@ -32,7 +33,7 @@ export default function ServicesGrid() {
                             Applications Mobiles
                         </h2>
                         <p className="mt-4 text-justify text-neutral-200">
-                            Donnez vie à votre projet sur iOS et Android avec des applications modernes et performantes.
+                            Donnez vie à votre projet sur <strong>iOS et Android</strong> avec des <strong>applications modernes et performantes</strong>.
                         </p>
                     </WobbleCard>
                     {/* Autres Cartes */}
@@ -46,12 +47,26 @@ export default function ServicesGrid() {
                                     {title}
                                 </h2>
                                 <p className="mt-4 text-justify text-neutral-200">
-                                    {title === "Identité Visuelle"
-                                        ? "Construisez une image forte et mémorable avec un logo unique et une palette de couleurs harmonieuse."
-                                        : title === "Design UI/UX"
-                                            ? "Offrez à vos utilisateurs une expérience fluide et intuitive grâce à des interfaces modernes."
-                                            : "De la carte de visite au flyer, en passant par les bannières et visuels digitaux."}
+                                    {title === "Identité Visuelle" ? (
+                                        <>
+                                            Construisez une image forte et mémorable avec un <strong>logo
+                                            unique</strong> et une <strong>palette de couleurs harmonieuse</strong>.
+                                        </>
+                                    ) : title === "Design UI/UX" ? (
+                                        <>
+                                            Offrez à vos utilisateurs une <strong>expérience fluide</strong> et
+                                            intuitive grâce à des <strong>interfaces modernes
+                                            fonctionnelles</strong> et conçues avec soin pour <strong>maximiser
+                                            l’engagement</strong>.
+                                        </>
+                                    ) : (
+                                        <>
+                                            De la <strong>carte de visite</strong> au <strong>flyer</strong>, en passant
+                                            par les <strong>bannières</strong> et visuels digitaux.
+                                        </>
+                                    )}
                                 </p>
+
                             </WobbleCard>
                         )
                     )}

@@ -4,16 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="993c21f0-fb8c-49b7-9349-23041c2d0a55" name="Changes" comment="add Heros + about + Works + services + Contact unfinished">
+    <list default="true" id="993c21f0-fb8c-49b7-9349-23041c2d0a55" name="Changes" comment="Finishing contact + responsive + fixing some error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/filles-du-sud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/kyumi.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/kyumi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pausecook.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/pausecook.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/aurora-background.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/aurora-background.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/contact.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contact.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/heros.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/heros.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/mobile-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mobile-menu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/project-overlay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/project-overlay.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/typewriter-effect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/typewriter-effect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/services-grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/services-grid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/wobble-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/wobble-card.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/work.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/work.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
@@ -100,7 +108,8 @@
       <workItem from="1735662106018" duration="6699000" />
       <workItem from="1735971747363" duration="17231000" />
       <workItem from="1736061693808" duration="19809000" />
-      <workItem from="1736167824749" duration="12253000" />
+      <workItem from="1736167824749" duration="36269000" />
+      <workItem from="1736754183138" duration="950000" />
     </task>
     <task id="LOCAL-00001" summary="add Heros + about + Works + services + Contact unfinished">
       <option name="closed" value="true" />
@@ -110,7 +119,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736159158952</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Finishing contact + responsive + fixing some error">
+      <option name="closed" value="true" />
+      <created>1736239624466</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1736239624466</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +146,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add Heros + about + Works + services + Contact unfinished" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Heros + about + Works + services + Contact unfinished" />
+    <MESSAGE value="Finishing contact + responsive + fixing some error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finishing contact + responsive + fixing some error" />
   </component>
 </project>

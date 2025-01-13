@@ -10,6 +10,7 @@ interface Project {
     type: string
     txt: string
     image: string
+    href: string
 }
 
 interface ProjectOverlayProps {
@@ -95,7 +96,7 @@ export function ProjectOverlay({project, rect, onCloseAction}: ProjectOverlayPro
                         }}
                         className="absolute rounded-lg overflow-hidden z-[58]"
                     >
-                        <a href="#" className="block w-full h-full">
+                        <a href={project.href} className="block w-full h-full" target="_blank" rel="noopener noreferrer">
                             <Image
                                 src={project.image}
                                 alt={project.title}
@@ -160,8 +161,10 @@ export function ProjectOverlay({project, rect, onCloseAction}: ProjectOverlayPro
                         className="absolute bottom-28 right-1/2 md:bottom-14 md:right-32 flex items-center z-[59]"
                     >
                         <a
-                            href="#"
+                            href={project.href}
                             className="relative flex flex-col items-center justify-center border border-white/50 rounded-lg px-6 py-4 text-center hover:text-gray-300 transition-colors"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
                             <span className="text-white text-sm font-main uppercase hover:text-gray-300 transition-colors">Voir plus</span>
                             <div className="absolute -top-9 -right-9">
